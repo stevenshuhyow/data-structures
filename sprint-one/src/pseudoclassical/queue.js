@@ -17,6 +17,7 @@ Queue.prototype.dequeue = function(){
     for(var i = 0; i < this.val ; i++){
       this[i] = this[i + 1];
     }
+    delete this[this.val]
     return deleted;
   }
 

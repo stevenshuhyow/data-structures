@@ -23,8 +23,9 @@ queueMethods.dequeue = function(){
     delete this.storage[0];
     this.val--;
     for(var i = 0; i < this.val ; i++){
-      this.storage[i] = this.storage[i + 1];
+        this.storage[i] = this.storage[i+1];
     }
+    delete this.storage[this.val];
     return deleted;
   }
 

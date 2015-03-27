@@ -19,6 +19,7 @@ var Queue = function(){
       for(var i = 0 ; i < size; i++){
         storage[i] = storage[i+1];
       }
+      delete storage[size];
       return result;
     }
   };
