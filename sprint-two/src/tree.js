@@ -10,10 +10,6 @@ var Tree = function(value){
   return newTree;
 };
 
-
-
-
-
 var treeMethods = {};
 
 treeMethods.addChild = function(value){
@@ -21,17 +17,24 @@ treeMethods.addChild = function(value){
 };
 
 treeMethods.contains = function(target){
-  var result = false
+
+  var result = false;
+
   var container = function(node){
-    if(node.value === target){
-      return result = true;
-    } else {
-    for(var i = 0 ; i < node.children.length ; i++){
-      container(node.children[i]);
+
+
+    if (node.value === target){
+      result = true;
+      return;
     }
-    }
+
+    _.each(node.children, function(child){
+       container(child);
+    });
   }
+
   container(this);
+
   return result;
 };
 
